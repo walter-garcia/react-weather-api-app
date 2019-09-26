@@ -13,6 +13,7 @@ class App extends Component {
     country: undefined,
     humidity: undefined,
     description: undefined,
+    icon: undefined,
     error: undefined
   }
 
@@ -37,6 +38,7 @@ class App extends Component {
         country: data.sys.country,
         humidity: data.main.humidity,
         description: data.weather[0].description,
+        icon: data.weather[0].icon,
         error: ""
       });
     } else {
@@ -46,6 +48,7 @@ class App extends Component {
         country: undefined,
         humidity: undefined,
         description: undefined,
+        icon: undefined,
         error: "Please, provide City and Country names."
       });
     }
@@ -68,6 +71,7 @@ class App extends Component {
                     country={this.state.country}
                     humidity={this.state.humidity}
                     description={this.state.description}
+                    icon={this.state.icon}
                     error={this.state.error}
                   />
                 </div>

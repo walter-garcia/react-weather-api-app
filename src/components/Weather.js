@@ -13,7 +13,7 @@ const Weather = props => (
       props.temperature && 
       <p className="weather__key">
         Temperature: 
-        <span className="weather__value"> { props.temperature }</span>
+        <span className="weather__value"> { props.temperature } ºC</span>
       </p> 
     }
     { 
@@ -24,10 +24,14 @@ const Weather = props => (
       </p> 
     }
     { 
-      props.description && 
+      props.description && props.icon &&
       <p className="weather__key">
         Conditions: 
-        <span className="weather__value"> { props.description }</span>
+        <span className="weather__value"> 
+          { props.description }
+          <img src={`http://openweathermap.org/img/w/${props.icon}.png`} alt="Weather Icon" />
+        </span>
+        
       </p>
     }
     { 
