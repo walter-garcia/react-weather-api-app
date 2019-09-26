@@ -46,28 +46,38 @@ class App extends Component {
         country: undefined,
         humidity: undefined,
         description: undefined,
-        error: "Please provide City and Country names."
+        error: "Please, provide City and Country names."
       });
     }
   }
   render() {
     return (
-      <>
-        <div>
-        <Titles />
-        <Form getWeather={this.getWeather} />
-        <Weather 
-          temperature={this.state.temperature}
-          city={this.state.city}
-          country={this.state.country}
-          humidity={this.state.humidity}
-          description={this.state.description}
-          error={this.state.error}
-        />
+      <div>
+        <div className="wrapper">
+          <div className="main">
+            <div className="container">
+              <div className="row">
+                <div className="col-5 title-container text-center">
+                  <Titles />
+                </div>
+                <div className="col-7 form-container">
+                  <Form getWeather={this.getWeather} />
+                  <Weather 
+                    temperature={this.state.temperature}
+                    city={this.state.city}
+                    country={this.state.country}
+                    humidity={this.state.humidity}
+                    description={this.state.description}
+                    error={this.state.error}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </>
-    )
+      </div>
+    );
   }
-}
+};
 
 export default App;
